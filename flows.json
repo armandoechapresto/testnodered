@@ -1,1 +1,1137 @@
-[{"id":"1a5b2d39.966753","type":"tab","label":"Flow 1","disabled":true,"info":""},{"id":"25b1c90a.8859d6","type":"tab","label":"Flow 2","disabled":true,"info":""},{"id":"150c2ac9.bc9345","type":"tab","label":"Flow 3","disabled":true,"info":""},{"id":"da182025.06223","type":"tab","label":"Flow 1","disabled":true,"info":""},{"id":"ab700640.9e3c28","type":"tab","label":"Flow 4","disabled":true,"info":""},{"id":"aeda4f6c.8e7cd","type":"tab","label":"Flow 5","disabled":false,"info":""},{"id":"f5dfb12f.66462","type":"group","z":"1a5b2d39.966753","name":"","style":{"fill":"#ffdf7f","label":true},"nodes":["35ef48dc.ec0d98"],"x":28,"y":73,"w":574,"h":434},{"id":"35ef48dc.ec0d98","type":"group","z":"1a5b2d39.966753","g":"f5dfb12f.66462","style":{"stroke":"#999999","stroke-opacity":"1","fill":"none","fill-opacity":"1","label":true,"label-position":"nw","color":"#a4a4a4"},"nodes":["6b93c015.070aa","d68a2091.b2c8d","adfe439e.442f3","39565674.7823fa","ec2f95f8.60fce8","21bcc4e8.52cf3c","d2b35964.09d278","b154f316.56414"],"x":54,"y":99,"w":522,"h":382},{"id":"4ba8d796.798758","type":"mqtt-broker","name":"","broker":"enriquecrespo.com","port":"1883","clientid":"","usetls":false,"compatmode":false,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"baab4b82.7a72b8","type":"ui_base","theme":{"name":"theme-light","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#0094CE","value":"#0094CE","edited":false},"page-titlebar-backgroundColor":{"value":"#0094CE","edited":false},"page-backgroundColor":{"value":"#fafafa","edited":false},"page-sidebar-backgroundColor":{"value":"#ffffff","edited":false},"group-textColor":{"value":"#1bbfff","edited":false},"group-borderColor":{"value":"#ffffff","edited":false},"group-backgroundColor":{"value":"#ffffff","edited":false},"widget-textColor":{"value":"#111111","edited":false},"widget-backgroundColor":{"value":"#0094ce","edited":false},"widget-borderColor":{"value":"#ffffff","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}},"angularTheme":{"primary":"indigo","accents":"blue","warn":"red","background":"grey"}},"site":{"name":"Node-RED Dashboard","hideToolbar":"false","allowSwipe":"false","lockMenu":"false","allowTempTheme":"true","dateFormat":"DD/MM/YYYY","sizes":{"sx":48,"sy":48,"gx":6,"gy":6,"cx":6,"cy":6,"px":0,"py":0}}},{"id":"5b9d7ab2.75bf34","type":"ui_group","name":"Botones","tab":"","disp":true,"width":"6","collapse":false},{"id":"35333e7f.047252","type":"ui_tab","name":"Home","icon":"dashboard","disabled":false,"hidden":false},{"id":"d046fb1f.ab21c8","type":"ui_group","name":"Default_1","tab":"35333e7f.047252","order":1,"disp":true,"width":"6","collapse":false},{"id":"102f510.00a25af","type":"ui_group","name":"Group 2","tab":"35333e7f.047252","order":2,"disp":true,"width":6},{"id":"cff01c60.e57a6","type":"mqtt-broker","name":"","broker":"enriquecrespo.com","port":"1883","clientid":"","usetls":false,"compatmode":false,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"e448ec0.97b3318","type":"ui_tab","name":"Home","icon":"dashboard","disabled":false,"hidden":false},{"id":"e42e6f04.920f8","type":"ui_group","name":"Temperatura","tab":"e448ec0.97b3318","order":1,"disp":true,"width":"6","collapse":false},{"id":"6b93c015.070aa","type":"inject","z":"1a5b2d39.966753","g":"35ef48dc.ec0d98","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":170,"y":140,"wires":[["d68a2091.b2c8d"]]},{"id":"d68a2091.b2c8d","type":"debug","z":"1a5b2d39.966753","g":"35ef48dc.ec0d98","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":420,"y":140,"wires":[]},{"id":"adfe439e.442f3","type":"mqtt in","z":"1a5b2d39.966753","g":"35ef48dc.ec0d98","name":"","topic":"aprendiendonodered/casa/m5stick/temperatura","qos":"2","datatype":"auto","broker":"4ba8d796.798758","x":290,"y":300,"wires":[["d68a2091.b2c8d","21bcc4e8.52cf3c","d2b35964.09d278"]]},{"id":"39565674.7823fa","type":"mqtt in","z":"1a5b2d39.966753","g":"35ef48dc.ec0d98","name":"","topic":"aprendiendonodered/casa/m5stick/humedad","qos":"2","datatype":"auto","broker":"4ba8d796.798758","x":270,"y":360,"wires":[["d68a2091.b2c8d","b154f316.56414"]]},{"id":"ec2f95f8.60fce8","type":"mqtt in","z":"1a5b2d39.966753","g":"35ef48dc.ec0d98","name":"","topic":"aprendiendonodered/casa/m5stick/presion","qos":"2","datatype":"auto","broker":"4ba8d796.798758","x":250,"y":440,"wires":[["d68a2091.b2c8d"]]},{"id":"21bcc4e8.52cf3c","type":"switch","z":"1a5b2d39.966753","g":"35ef48dc.ec0d98","name":"","property":"payload","propertyType":"msg","rules":[{"t":"gt","v":"","vt":"str"},{"t":"eq","v":"","vt":"str"}],"checkall":"true","repair":false,"outputs":2,"x":180,"y":240,"wires":[[],[]]},{"id":"cc70f9ef.8e1598","type":"inject","z":"25b1c90a.8859d6","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":true,"onceDelay":"1","topic":"","payload":"","payloadType":"date","x":140,"y":120,"wires":[["33ec6a58.ad9c86"]],"outputLabels":["Hola pepito"],"icon":"node-red/comment.svg"},{"id":"33ec6a58.ad9c86","type":"http request","z":"25b1c90a.8859d6","name":"","method":"GET","ret":"txt","paytoqs":"ignore","url":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.csv","tls":"","persist":false,"proxy":"","authType":"","x":190,"y":220,"wires":[["2ab24c72.6277d4"]]},{"id":"2ab24c72.6277d4","type":"csv","z":"25b1c90a.8859d6","name":"","sep":",","hdrin":true,"hdrout":"none","multi":"one","ret":"\\n","temp":"","skip":"0","strings":true,"include_empty_strings":"","include_null_values":"","x":370,"y":220,"wires":[["a4cd69bc.eafba8"]]},{"id":"a4cd69bc.eafba8","type":"debug","z":"25b1c90a.8859d6","name":"","active":true,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":570,"y":220,"wires":[]},{"id":"3193e554.86d1da","type":"function","z":"25b1c90a.8859d6","name":"","func":"\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":170,"y":300,"wires":[["4444a42a.69692c"]]},{"id":"4444a42a.69692c","type":"function","z":"25b1c90a.8859d6","name":"","func":"\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":370,"y":340,"wires":[["590bbef9.44638"]]},{"id":"590bbef9.44638","type":"switch","z":"25b1c90a.8859d6","name":"","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"","vt":"str"}],"checkall":"true","repair":false,"outputs":1,"x":560,"y":300,"wires":[[]]},{"id":"b47dbf28.a2989","type":"inject","z":"25b1c90a.8859d6","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":130,"y":400,"wires":[["fa25a66e.11a4b8"]]},{"id":"fa25a66e.11a4b8","type":"function","z":"25b1c90a.8859d6","name":"","func":"\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":270,"y":420,"wires":[["94fcb1b5.b4231"]]},{"id":"94fcb1b5.b4231","type":"change","z":"25b1c90a.8859d6","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":450,"y":420,"wires":[["2f47b367.f9a12c"]]},{"id":"2f47b367.f9a12c","type":"batch","z":"25b1c90a.8859d6","name":"","mode":"count","count":10,"overlap":0,"interval":10,"allowEmptySequence":false,"topics":[{"topic":""}],"x":600,"y":400,"wires":[[]]},{"id":"d2b35964.09d278","type":"ui_gauge","z":"1a5b2d39.966753","g":"35ef48dc.ec0d98","name":"","group":"102f510.00a25af","order":1,"width":0,"height":0,"gtype":"gage","title":"gauge","label":"units","format":"{{value}}","min":0,"max":"50","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":470,"y":200,"wires":[]},{"id":"b154f316.56414","type":"ui_chart","z":"1a5b2d39.966753","g":"35ef48dc.ec0d98","name":"","group":"d046fb1f.ab21c8","order":1,"width":0,"height":0,"label":"chart","chartType":"line","legend":"false","xformat":"HH:mm:ss","interpolate":"linear","nodata":"","dot":false,"ymin":"","ymax":"","removeOlder":1,"removeOlderPoints":"","removeOlderUnit":"3600","cutout":0,"useOneColor":false,"useUTC":false,"colors":["#1f77b4","#aec7e8","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"useOldStyle":false,"outputs":1,"x":500,"y":400,"wires":[[]]},{"id":"8a2b1c1b.2297a","type":"mqtt in","z":"da182025.06223","name":"","topic":"aprendiendonodered/casa/m5stick/temperatura","qos":"2","datatype":"auto","broker":"cff01c60.e57a6","x":220,"y":140,"wires":[["febd3cfd.1895e","ad6698be.972a68","31fe1926.aa6c06"]]},{"id":"febd3cfd.1895e","type":"debug","z":"da182025.06223","name":"","active":false,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":700,"y":160,"wires":[]},{"id":"ad6698be.972a68","type":"ui_gauge","z":"da182025.06223","name":"","group":"e42e6f04.920f8","order":0,"width":0,"height":0,"gtype":"gage","title":"gauge","label":"units","format":"{{value}}","min":0,"max":10,"colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":700,"y":220,"wires":[]},{"id":"31fe1926.aa6c06","type":"switch","z":"da182025.06223","name":"","property":"payload","propertyType":"msg","rules":[{"t":"gt","v":"22","vt":"num"},{"t":"lt","v":"21.8","vt":"num"},{"t":"else"}],"checkall":"true","repair":false,"outputs":3,"x":130,"y":300,"wires":[["7c27d23.cd4e62c"],["da9dca0a.a0a798"],["7fd5be5c.fbda4"]]},{"id":"e3aedfb7.d1b9f","type":"ui_text","z":"da182025.06223","group":"e42e6f04.920f8","order":1,"width":0,"height":0,"name":"","label":"Confort","format":"{{msg.payload}}","layout":"row-spread","x":760,"y":320,"wires":[]},{"id":"7c27d23.cd4e62c","type":"change","z":"da182025.06223","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"Hace Calor","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":340,"y":280,"wires":[["1d784aec.4c5d25"]]},{"id":"4c5347e8.d70d28","type":"e-mail","z":"da182025.06223","server":"smtp.gmail.com","port":"465","secure":true,"tls":true,"name":"aprendiendoraspberrypi@gmail.com","dname":"","x":750,"y":440,"wires":[]},{"id":"d0f79bf5.1f55c8","type":"debug","z":"da182025.06223","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":770,"y":360,"wires":[]},{"id":"da9dca0a.a0a798","type":"change","z":"da182025.06223","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"Hace Frio","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":340,"y":320,"wires":[["1d784aec.4c5d25"]]},{"id":"7fd5be5c.fbda4","type":"change","z":"da182025.06223","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"Todo OK","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":340,"y":360,"wires":[["1d784aec.4c5d25"]]},{"id":"1d784aec.4c5d25","type":"rbe","z":"da182025.06223","name":"","func":"rbe","gap":"","start":"","inout":"out","property":"payload","x":550,"y":320,"wires":[["e3aedfb7.d1b9f","d0f79bf5.1f55c8","4c5347e8.d70d28"]]},{"id":"b55ef8c8.08aa78","type":"ui_switch","z":"ab700640.9e3c28","name":"","label":"switch","tooltip":"","order":0,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","style":"","onvalue":true,"onvalueType":"bool","onicon":"","oncolor":"","offvalue":false,"offvalueType":"bool","officon":"","offcolor":"","x":200,"y":100,"wires":[[]]},{"id":"56cbfbaf.ee0a14","type":"ui_slider","z":"ab700640.9e3c28","name":"","label":"slider","tooltip":"","group":"e42e6f04.920f8","order":2,"width":0,"height":0,"passthru":true,"outs":"end","topic":"","min":0,"max":"100","step":"2","x":190,"y":220,"wires":[["c22863ed.2c49"]]},{"id":"c22863ed.2c49","type":"ui_gauge","z":"ab700640.9e3c28","name":"","group":"e42e6f04.920f8","order":3,"width":0,"height":0,"gtype":"gage","title":"gauge","label":"units","format":"{{value}}","min":0,"max":"100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":370,"y":220,"wires":[]},{"id":"f073b96d.c69578","type":"ui_button","z":"aeda4f6c.8e7cd","name":"","group":"5b9d7ab2.75bf34","order":0,"width":0,"height":0,"passthru":false,"label":"button","tooltip":"","color":"","bgcolor":"","icon":"","payload":"","payloadType":"str","topic":"","x":210,"y":120,"wires":[["16caec05.a762a4"]]},{"id":"16caec05.a762a4","type":"ui_button","z":"aeda4f6c.8e7cd","name":"","group":"5b9d7ab2.75bf34","order":0,"width":0,"height":0,"passthru":false,"label":"button","tooltip":"","color":"","bgcolor":"","icon":"","payload":"","payloadType":"str","topic":"","x":380,"y":120,"wires":[["f073b96d.c69578"]]}]
+[
+    {
+        "id": "1a5b2d39.966753",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "25b1c90a.8859d6",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "150c2ac9.bc9345",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "da182025.06223",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "ab700640.9e3c28",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "aeda4f6c.8e7cd",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f5dfb12f.66462",
+        "type": "group",
+        "z": "1a5b2d39.966753",
+        "name": "",
+        "style": {
+            "fill": "#ffdf7f",
+            "label": true
+        },
+        "nodes": [
+            "35ef48dc.ec0d98"
+        ],
+        "x": 28,
+        "y": 73
+    },
+    {
+        "id": "35ef48dc.ec0d98",
+        "type": "group",
+        "z": "1a5b2d39.966753",
+        "g": "f5dfb12f.66462",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "6b93c015.070aa",
+            "d68a2091.b2c8d",
+            "adfe439e.442f3",
+            "39565674.7823fa",
+            "ec2f95f8.60fce8",
+            "21bcc4e8.52cf3c",
+            "d2b35964.09d278",
+            "b154f316.56414"
+        ],
+        "x": 54,
+        "y": 99
+    },
+    {
+        "id": "4ba8d796.798758",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "enriquecrespo.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "baab4b82.7a72b8",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "5b9d7ab2.75bf34",
+        "type": "ui_group",
+        "name": "Botones",
+        "tab": "",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "35333e7f.047252",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d046fb1f.ab21c8",
+        "type": "ui_group",
+        "name": "Default_1",
+        "tab": "35333e7f.047252",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "102f510.00a25af",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "35333e7f.047252",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "cff01c60.e57a6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "enriquecrespo.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "e448ec0.97b3318",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e42e6f04.920f8",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "e448ec0.97b3318",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "6b93c015.070aa",
+        "type": "inject",
+        "z": "1a5b2d39.966753",
+        "g": "35ef48dc.ec0d98",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "d68a2091.b2c8d"
+            ]
+        ]
+    },
+    {
+        "id": "d68a2091.b2c8d",
+        "type": "debug",
+        "z": "1a5b2d39.966753",
+        "g": "35ef48dc.ec0d98",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "adfe439e.442f3",
+        "type": "mqtt in",
+        "z": "1a5b2d39.966753",
+        "g": "35ef48dc.ec0d98",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stick/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4ba8d796.798758",
+        "x": 290,
+        "y": 300,
+        "wires": [
+            [
+                "d68a2091.b2c8d",
+                "21bcc4e8.52cf3c",
+                "d2b35964.09d278"
+            ]
+        ]
+    },
+    {
+        "id": "39565674.7823fa",
+        "type": "mqtt in",
+        "z": "1a5b2d39.966753",
+        "g": "35ef48dc.ec0d98",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stick/humedad",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4ba8d796.798758",
+        "x": 270,
+        "y": 360,
+        "wires": [
+            [
+                "d68a2091.b2c8d",
+                "b154f316.56414"
+            ]
+        ]
+    },
+    {
+        "id": "ec2f95f8.60fce8",
+        "type": "mqtt in",
+        "z": "1a5b2d39.966753",
+        "g": "35ef48dc.ec0d98",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stick/presion",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4ba8d796.798758",
+        "x": 250,
+        "y": 440,
+        "wires": [
+            [
+                "d68a2091.b2c8d"
+            ]
+        ]
+    },
+    {
+        "id": "21bcc4e8.52cf3c",
+        "type": "switch",
+        "z": "1a5b2d39.966753",
+        "g": "35ef48dc.ec0d98",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "cc70f9ef.8e1598",
+        "type": "inject",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "33ec6a58.ad9c86"
+            ]
+        ],
+        "outputLabels": [
+            "Hola pepito"
+        ],
+        "icon": "node-red/comment.svg"
+    },
+    {
+        "id": "33ec6a58.ad9c86",
+        "type": "http request",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "2ab24c72.6277d4"
+            ]
+        ]
+    },
+    {
+        "id": "2ab24c72.6277d4",
+        "type": "csv",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "a4cd69bc.eafba8"
+            ]
+        ]
+    },
+    {
+        "id": "a4cd69bc.eafba8",
+        "type": "debug",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 570,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3193e554.86d1da",
+        "type": "function",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "4444a42a.69692c"
+            ]
+        ]
+    },
+    {
+        "id": "4444a42a.69692c",
+        "type": "function",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 370,
+        "y": 340,
+        "wires": [
+            [
+                "590bbef9.44638"
+            ]
+        ]
+    },
+    {
+        "id": "590bbef9.44638",
+        "type": "switch",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 560,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b47dbf28.a2989",
+        "type": "inject",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "fa25a66e.11a4b8"
+            ]
+        ]
+    },
+    {
+        "id": "fa25a66e.11a4b8",
+        "type": "function",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 270,
+        "y": 420,
+        "wires": [
+            [
+                "94fcb1b5.b4231"
+            ]
+        ]
+    },
+    {
+        "id": "94fcb1b5.b4231",
+        "type": "change",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 420,
+        "wires": [
+            [
+                "2f47b367.f9a12c"
+            ]
+        ]
+    },
+    {
+        "id": "2f47b367.f9a12c",
+        "type": "batch",
+        "z": "25b1c90a.8859d6",
+        "name": "",
+        "mode": "count",
+        "count": 10,
+        "overlap": 0,
+        "interval": 10,
+        "allowEmptySequence": false,
+        "topics": [
+            {
+                "topic": ""
+            }
+        ],
+        "x": 600,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2b35964.09d278",
+        "type": "ui_gauge",
+        "z": "1a5b2d39.966753",
+        "g": "35ef48dc.ec0d98",
+        "name": "",
+        "group": "102f510.00a25af",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 470,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b154f316.56414",
+        "type": "ui_chart",
+        "z": "1a5b2d39.966753",
+        "g": "35ef48dc.ec0d98",
+        "name": "",
+        "group": "d046fb1f.ab21c8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 500,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a2b1c1b.2297a",
+        "type": "mqtt in",
+        "z": "da182025.06223",
+        "name": "",
+        "topic": "aprendiendonodered/casa/m5stick/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "cff01c60.e57a6",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "febd3cfd.1895e",
+                "ad6698be.972a68",
+                "31fe1926.aa6c06"
+            ]
+        ]
+    },
+    {
+        "id": "febd3cfd.1895e",
+        "type": "debug",
+        "z": "da182025.06223",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ad6698be.972a68",
+        "type": "ui_gauge",
+        "z": "da182025.06223",
+        "name": "",
+        "group": "e42e6f04.920f8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 700,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "31fe1926.aa6c06",
+        "type": "switch",
+        "z": "da182025.06223",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "22",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "21.8",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [
+                "7c27d23.cd4e62c"
+            ],
+            [
+                "da9dca0a.a0a798"
+            ],
+            [
+                "7fd5be5c.fbda4"
+            ]
+        ]
+    },
+    {
+        "id": "e3aedfb7.d1b9f",
+        "type": "ui_text",
+        "z": "da182025.06223",
+        "group": "e42e6f04.920f8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Confort",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 760,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "7c27d23.cd4e62c",
+        "type": "change",
+        "z": "da182025.06223",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Hace Calor",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 280,
+        "wires": [
+            [
+                "1d784aec.4c5d25"
+            ]
+        ]
+    },
+    {
+        "id": "4c5347e8.d70d28",
+        "type": "e-mail",
+        "z": "da182025.06223",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "aprendiendoraspberrypi@gmail.com",
+        "dname": "",
+        "x": 750,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "d0f79bf5.1f55c8",
+        "type": "debug",
+        "z": "da182025.06223",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "da9dca0a.a0a798",
+        "type": "change",
+        "z": "da182025.06223",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Hace Frio",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "1d784aec.4c5d25"
+            ]
+        ]
+    },
+    {
+        "id": "7fd5be5c.fbda4",
+        "type": "change",
+        "z": "da182025.06223",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Todo OK",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 360,
+        "wires": [
+            [
+                "1d784aec.4c5d25"
+            ]
+        ]
+    },
+    {
+        "id": "1d784aec.4c5d25",
+        "type": "rbe",
+        "z": "da182025.06223",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 550,
+        "y": 320,
+        "wires": [
+            [
+                "e3aedfb7.d1b9f",
+                "d0f79bf5.1f55c8",
+                "4c5347e8.d70d28"
+            ]
+        ]
+    },
+    {
+        "id": "b55ef8c8.08aa78",
+        "type": "ui_switch",
+        "z": "ab700640.9e3c28",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": true,
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": false,
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 200,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56cbfbaf.ee0a14",
+        "type": "ui_slider",
+        "z": "ab700640.9e3c28",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "e42e6f04.920f8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": "2",
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "c22863ed.2c49"
+            ]
+        ]
+    },
+    {
+        "id": "c22863ed.2c49",
+        "type": "ui_gauge",
+        "z": "ab700640.9e3c28",
+        "name": "",
+        "group": "e42e6f04.920f8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 370,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f073b96d.c69578",
+        "type": "ui_button",
+        "z": "aeda4f6c.8e7cd",
+        "name": "",
+        "group": "5b9d7ab2.75bf34",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 210,
+        "y": 120,
+        "wires": [
+            [
+                "16caec05.a762a4"
+            ]
+        ]
+    },
+    {
+        "id": "16caec05.a762a4",
+        "type": "ui_button",
+        "z": "aeda4f6c.8e7cd",
+        "name": "",
+        "group": "5b9d7ab2.75bf34",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "f073b96d.c69578"
+            ]
+        ]
+    },
+    {
+        "id": "f3eb39c8.ad4238",
+        "type": "catch",
+        "z": "aeda4f6c.8e7cd",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 270,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6590c2b.34ba3",
+        "type": "link in",
+        "z": "aeda4f6c.8e7cd",
+        "name": "",
+        "links": [],
+        "x": 165,
+        "y": 280,
+        "wires": [
+            [
+                "f073b96d.c69578"
+            ]
+        ]
+    }
+]
